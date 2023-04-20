@@ -1,0 +1,31 @@
+<!-- frontend code for image processing -->
+<html>
+<title> Image Processing </title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!--Link Style.css file here-->
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+
+<body><br>
+
+
+<h1>Image Processing</h1><hr>
+
+<!--Add <form> Tag here along with two <br> tags-->
+    <form method="POST" enctype="multipart/form-data" action="/gray">
+    <h2>Select an Image for adding a Black & White effect to it.</h2>
+
+    <!--Write input tag to add upload button-->
+    <input type="file" name="input_file" class="btn btn-primary btn-lg">
+    <!--Write input tag to add Submit button-->
+    <input type="submit" value="Submit" class="btn btn-primary btn-lg">
+    <!--Add h3 tag to display message defined in app.py file after images gets uploaded-->
+    <h3>{{message}}</h3>
+    <!--Add <img> tag to display the uploaded image-->
+    <img src="{{url_for('get_grayed', filename=filename)}}">
+<!--End <form> tag-->
+</form>
+
+</body>
+</html>
