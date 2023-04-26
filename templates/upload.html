@@ -9,12 +9,22 @@
 
 <body><br>
 
-
+<center>
 <h1>Image Processing</h1><hr>
 
 <!--Add <form> Tag here along with two <br> tags-->
     <form method="POST" enctype="multipart/form-data" action="/gray">
-    <h2>Select an Image for adding a Black & White effect to it.</h2>
+    <h2>Select an Image for doing image proccessing.</h2>
+
+    <select name="proccess_selection">
+        <option value="gray" class="option">Grayscale</option>
+        <option value="sketch" class="option">Sketch Effect</option>
+        <option value="oil" class="option">Oil Effect</option>
+        <option value="rgb" class="option">BGR to RGB</option>
+        <option value="water" class="option">Water Color</option>
+        <option value="invert" class="option">Color Inverted</option>
+        <option value="hdr" class="option">HDR</option>
+    </select>
 
     <!--Write input tag to add upload button-->
     <input type="file" name="input_file" class="btn btn-primary btn-lg">
@@ -26,6 +36,6 @@
     <img src="{{url_for('get_grayed', filename=filename)}}">
 <!--End <form> tag-->
 </form>
-
+</center>
 </body>
 </html>
